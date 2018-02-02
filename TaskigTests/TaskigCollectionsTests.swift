@@ -27,6 +27,8 @@
 import XCTest
 @testable import Taskig
 
+// MARK: - Helpers
+
 fileprivate extension Collection {
     /// Return a copy of `self` with its elements shuffled
     func shuffle() -> [Iterator.Element] {
@@ -51,7 +53,8 @@ fileprivate extension MutableCollection where Index == Int {
         }
     }
 }
-fileprivate let numbers: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+fileprivate let numbers: [Int] = (0...9).map{ $0 }
 
 fileprivate func toString(_ number: Int) -> Task<String> {
     return Task { "\(number)" }
@@ -74,12 +77,14 @@ fileprivate enum TestError : Error {
 
 fileprivate let toStringExceptZero = {(number: Int) -> ThrowableTask<String> in
     ThrowableTask {
-        if number == 1 {
+        if number == 0 {
             throw TestError.FoundZero
         }
         return "\(number)"
     }
 }
+
+extension String: Error {}
 
 class TaskigCollectionsTests: XCTestCase {
     override func setUp() {
@@ -160,7 +165,7 @@ class TaskigCollectionsTests: XCTestCase {
             .map {number in toStringAfter(number, timeoutInterval: TimeInterval(Double(number) / 100 + 0.1))}
             .awaitFirst()
         
-        XCTAssert(result == "1")
+        XCTAssert(result == "0")
     }
     
     func testThatAwaitFirstWorksWithOptionals() {
@@ -250,7 +255,7 @@ class TaskigCollectionsTests: XCTestCase {
     func testThatAwaitFirstWorksWithThrowableTasks() {
         let task1 = ThrowableTask<String> {
             timeout(forTimeInterval: 0.1).await()
-            let result = try toStringExceptZero(1).await()
+            let result = try toStringExceptZero(0).await()
             return result
         }
         
@@ -260,5 +265,39 @@ class TaskigCollectionsTests: XCTestCase {
         }
         
         XCTAssertThrowsError(try [task1, task2].awaitFirst())
+    }
+    
+    func testThatConcurrencyParameterWorks() {
+        var finishedTaskOne = false
+        
+        let task1 = ThrowableTask<String> {
+            timeout(forTimeInterval: 0.1).await()
+            finishedTaskOne = true
+            return "foo"
+        }
+        
+        let task2 = ThrowableTask<String> { () -> String in
+            guard finishedTaskOne == true else {
+                throw "Task one was not finished before execution"
+            }
+            
+            return "bar"
+        }
+        
+        let tasks = [task1, task2]
+        
+        XCTAssertThrowsError(try tasks.awaitAll())
+        
+        finishedTaskOne = false
+        
+        XCTAssertNoThrow(try tasks.awaitAll(.global(), concurrency: 1))
+        
+        finishedTaskOne = false
+        
+        XCTAssertThrowsError(try tasks.awaitFirst())
+        
+        finishedTaskOne = false
+        
+        XCTAssertNoThrow(try tasks.awaitFirst(concurrency: 1))
     }
 }

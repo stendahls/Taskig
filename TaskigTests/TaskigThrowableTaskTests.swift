@@ -76,6 +76,26 @@ class TaskigThrowableTaskTests: XCTestCase {
         XCTAssertThrowsError(try task.await())
     }
     
+    func testThatThrowableTaskAwaitResultReturnsCorrectResult() {
+        let taskFailure = ThrowableTask<String> { () -> String in
+            throw TestError.general
+        }
+        
+        let taskSuccess = ThrowableTask<String> { () -> String in
+            return "foobar"
+        }
+        
+        guard case let .success(text) = taskSuccess.awaitResult() else {
+            return XCTFail("Expected success result")
+        }
+        
+        XCTAssert(text == "foobar")
+        
+        guard case let .failure(error) = taskFailure.awaitResult(), case TestError.general = error else {
+            return XCTFail("Expected failure result")
+        }
+    }
+    
     func testThatThrowableTaskAsyncCallsCompletionHandlerWithSuccessResult() {
         let expectation = XCTestExpectation()
         
@@ -366,6 +386,58 @@ class TaskigThrowableTaskTests: XCTestCase {
         numbers.forEach({ number in
             XCTAssert(result.contains("\(number)"))
         })
+    }
+    
+    func testThatCustomThrowableTaskTypeWorks() {
+        let expectation = XCTestExpectation()
+
+        let customTask = CustomThrowableTask(executionQueue: .global())
+        
+        guard case let .success(text) = customTask.awaitResult(), text == "foobar" else {
+            return XCTFail("False result value, expected success and foobar as text")
+        }
+        
+        do {
+            let text = try customTask.await()
+            XCTAssert(text == "foobar")
+        } catch {
+            return XCTFail("Expected no throw")
+        }
+        
+        customTask.async { (result) in
+            guard case let .success(text) = result, text == "foobar" else {
+                return XCTFail("False result value, expected success and foobar as text")
+            }
+            
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 0.1)
+    }
+    
+    func testThatStaticAwaitFunctionWorks() {
+        do {
+            let text = try ThrowableTask<String>.await(executionQueue: .global()) { () -> String in
+                return "foobar"
+            }
+            XCTAssert(text == "foobar")
+        } catch {
+            return XCTFail("Expected no throw")
+        }
+        
+        XCTAssertThrowsError(try ThrowableTask<String>.await(executionQueue: .global(), action: { () -> String in
+            throw "Error"
+        }))
+    }
+}
+
+fileprivate struct CustomThrowableTask: ThrowableTaskType {
+    typealias ResultType = String
+    
+    var executionQueue: DispatchQueue
+    
+    func action(completion: @escaping (TaskResult<String>) -> Void) {
+        completion(.success("foobar"))
     }
 }
 

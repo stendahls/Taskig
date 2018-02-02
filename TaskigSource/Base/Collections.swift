@@ -37,13 +37,18 @@ public enum TaskigError: Error {
 // MARK: - Await support for Dictionary
 
 public extension Dictionary where Value : ThrowableTaskType {
-    func awaitFirst(_ queue: DispatchQueue = .global()) throws -> Value.ResultType {
-        return try values.awaitFirst(queue)
+    func awaitFirst(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) throws -> Value.ResultType {
+        return try values.awaitFirst(queue, concurrency: concurrency)
     }
     
     func awaitAll(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) throws -> [Key: Value.ResultType] {
         let elements = Array(zip(Array(keys), try values.awaitAll(queue, concurrency: concurrency)))
         return Dictionary<Key, Value.ResultType>(uniqueKeysWithValues: elements)
+    }
+    
+    func awaitAllResults(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) -> [Key: TaskResult<Value.ResultType>] {
+        let elements = Array(zip(Array(keys), values.awaitAllResults(queue, concurrency: concurrency)))
+        return Dictionary<Key, TaskResult<Value.ResultType>>(uniqueKeysWithValues: elements)
     }
 }
 
@@ -52,8 +57,8 @@ public extension Dictionary where Value : TaskType {
         return values.throwableTasks
     }
     
-    func awaitFirst(_ queue: DispatchQueue = .global()) -> Value.ResultType {
-        return try! throwableTasks.awaitFirst(queue)
+    func awaitFirst(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) -> Value.ResultType {
+        return try! throwableTasks.awaitFirst(queue, concurrency: concurrency)
     }
     
     func awaitAll(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) -> [Key: Value.ResultType] {
@@ -104,7 +109,7 @@ public extension Sequence where Iterator.Element : TaskType {
         return map {$0.throwableTask}
     }
     
-    func awaitFirst(_ queue: DispatchQueue = .global()) -> Iterator.Element.ResultType {
+    func awaitFirst(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) -> Iterator.Element.ResultType {
         return try! throwableTasks.awaitFirst(queue)
     }
     
@@ -119,10 +124,10 @@ public extension Sequence where Iterator.Element : TaskType {
 public extension Array {
     func concurrentForEach<T>(_ queue: DispatchQueue, concurrency: Int, transform: @escaping (Element) -> T, completion: @escaping (T) -> ()) {
         let workGroup = DispatchGroup()
-        let maxWorkItemsSema = DispatchSemaphore(value: concurrency)
+        let maxWorkItemsSemaphore = DispatchSemaphore(value: concurrency)
         
         self.forEach ({ task in
-            maxWorkItemsSema.wait()
+            maxWorkItemsSemaphore.wait()
             workGroup.enter()
             
             queue.async(group: workGroup) {
@@ -131,7 +136,7 @@ public extension Array {
                 async_custom_queue.sync {
                     completion(result)
                     workGroup.leave()
-                    maxWorkItemsSema.signal()
+                    maxWorkItemsSemaphore.signal()
                 }
             }
         })
@@ -144,28 +149,30 @@ public extension Array {
             return []
         }
         
-        let fd_sema = DispatchSemaphore(value: 0)
-        let fd_sema2 = DispatchSemaphore(value: concurrency)
+        let finishedAllTasksSemaphore = DispatchSemaphore(value: 0)
+        let maxWorkItemsSemaphore = DispatchSemaphore(value: concurrency)
         
         var results = [T?](repeating: nil, count: count)
         var numberOfCompletedTasks = 0
         let numberOfTasks = count
         
         DispatchQueue.concurrentPerform(iterations: count) {index in
-            let _ = fd_sema2.wait()
+            let _ = maxWorkItemsSemaphore.wait()
             let result = transform(self[index])
             
             async_custom_queue.sync {
                 results[index] = result
                 numberOfCompletedTasks += 1
+                
                 if numberOfCompletedTasks == numberOfTasks {
-                    fd_sema.signal()
+                    finishedAllTasksSemaphore.signal()
                 }
-                fd_sema2.signal()
+                
+                maxWorkItemsSemaphore.signal()
             }
         }
         
-        let _ = fd_sema.wait()
+        let _ = finishedAllTasksSemaphore.wait()
         return results.flatMap {$0}
     }
 }

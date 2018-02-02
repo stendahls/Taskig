@@ -33,6 +33,8 @@ public struct ThrowableTask<T>: ThrowableTaskType {
     
     private let actionBlock: (@escaping resultHandler) -> Void
     
+    public var isCancelled: Bool = false
+    
     public init(executionQueue: DispatchQueue = .global(), action: @escaping (@escaping resultHandler) -> Void) {
         self.actionBlock = action
         self.executionQueue = executionQueue
@@ -59,6 +61,44 @@ public extension ThrowableTask where T == Void {
     public func async() {
         executionQueue.async {
             self.action(completion: { (_) in })
+        }
+    }
+}
+
+extension ThrowableTask: CancellableTaskType {
+    @discardableResult
+    public func awaitResult() -> TaskResult<ResultType> {
+        var result: TaskResult<ResultType>!
+        
+        let group = DispatchGroup()
+        group.enter()
+        
+        executionQueue.async {
+            guard self.isCancelled == false else {
+                result = .failure(CancellableTaskError.taskWasCancelled)
+                group.leave()
+                return
+            }
+            
+            self.action(completion: { (actionResult) in
+                result = actionResult
+                group.leave()
+            })
+        }
+        
+        group.wait()
+        
+        return result
+    }
+
+    public func async(completion: @escaping resultHandler) {
+        executionQueue.async {
+            guard self.isCancelled == false else {
+                completion(.failure(CancellableTaskError.taskWasCancelled))
+                return
+            }
+            
+            self.action(completion: completion)
         }
     }
 }
