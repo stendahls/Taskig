@@ -43,6 +43,8 @@ public protocol ThrowableTaskType {
 public extension ThrowableTaskType {
     @discardableResult
     public func awaitResult() -> TaskResult<ResultType> {
+        precondition((executionQueue == .main && Thread.isMainThread == true) == false)
+        
         var result: TaskResult<ResultType>!
         
         let group = DispatchGroup()

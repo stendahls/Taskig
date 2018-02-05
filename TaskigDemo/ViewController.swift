@@ -47,6 +47,16 @@ extension URL: ThrowableTaskType {
     }
 }
 
+extension UIView {
+    static func animateTask(withDuration duration: TimeInterval, animations: @escaping () -> Void) -> Task<Bool> {
+        return Task<Bool>(executionQueue: .main) { (completion) in
+            UIView.animate(withDuration: duration, animations: animations, completion: { (success) in
+                completion(success)
+            })
+        }
+    }
+}
+
 func currentQueueName() -> String? {
     let name = __dispatch_queue_get_label(nil)
     return String(cString: name, encoding: .utf8)
@@ -64,8 +74,24 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func encrypt(message: String) -> Task<String> {
+        return Task<String> {
+            // do encryption here
+            return message
+        }
+    }
 
     func test() {
+        let mainTask = Task<Void>(executionQueue: .main) {
+            // crash if on main thread
+            print("On Main Thread")
+        }
+        
+        Task.async(executionQueue: .background) {
+            mainTask.await()
+        }
+        
         let task = ThrowableTask<String>(action: { (resultHanlder) -> Void in
             resultHanlder(.success("Async with result"))
         })
@@ -148,10 +174,10 @@ class ViewController: UIViewController {
                 print(error)
             }
             
-            let urlResult = try URL(string: "https://loripsum.net/api")!.await()
-            print("Status code: \(urlResult.1.statusCode)")
-            print(urlResult.0.debugDescription)
-            print(String(data: urlResult.0, encoding: .utf8)!)
+            let (data, response) = try URL(string: "https://loripsum.net/api")!.await()
+            print("Status code: \(response.statusCode)")
+            print(data.debugDescription)
+            print(String(data: data, encoding: .utf8)!)
         } catch {
             print(error)
         }
