@@ -7,7 +7,7 @@
 
 An async/await inspired library which makes asynchronous programming in Swift a joy!
 
-Taskig makes it easy to execute code on different threads, e.g. background or main, and then compose these tasks via asnyc/await methodology. Taskig was heavily inspired by AsyncTask (https://github.com/zhxnlai/AsyncTask)
+Taskig makes it easy to execute code on different threads, e.g. background or main, and then compose these tasks via async/await methodology. Taskig was heavily inspired by AsyncTask (https://github.com/zhxnlai/AsyncTask)
 
 ## Features
 - Taskig is **composable**, allowing you to build complex workflow.
@@ -16,15 +16,14 @@ Taskig makes it easy to execute code on different threads, e.g. background or ma
 
 Without Taskig:
 ```swift
-// get a global concurrent queue
-let queue = dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)
-
-// submit a task to the queue for background execution
-dispatch_async(queue) {
+// submit a task to the global queue for background execution
+DispatchQueue.global(qos: .userInteractive).async {
     let enhancedImage = self.applyImageFilter(image) // expensive operation taking a few seconds
+
     // update UI on the main queue
-    dispatch_async(dispatch_get_main_queue()) {
+    DispatchQueue.main.async {
         self.imageView.image = enhancedImage
+
         UIView.animateWithDuration(0.3, animations: {
             self.imageView.alpha = 1
         }) { completed in
