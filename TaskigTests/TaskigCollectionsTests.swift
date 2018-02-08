@@ -31,7 +31,7 @@ import XCTest
 
 fileprivate extension Collection {
     /// Return a copy of `self` with its elements shuffled
-    func shuffle() -> [Iterator.Element] {
+    func shuffled() -> [Iterator.Element] {
         var list = Array(self)
         list.shuffle()
         return list
@@ -47,7 +47,6 @@ fileprivate extension MutableCollection where Index == Int {
         for i in startIndex ..< endIndex - 1 {
             let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
             if i != j {
-                //                swap(&self[i], &self[j])
                 self.swapAt(i, j)
             }
         }
@@ -76,7 +75,7 @@ fileprivate enum TestError : Error {
 }
 
 fileprivate let toStringExceptZero = {(number: Int) -> ThrowableTask<String> in
-    ThrowableTask {
+    return ThrowableTask {
         if number == 0 {
             throw TestError.FoundZero
         }
@@ -161,7 +160,7 @@ class TaskigCollectionsTests: XCTestCase {
     
     func testThatAwaitFirstWorks() {
         let result = numbers
-            .shuffle()
+            .shuffled()
             .map {number in toStringAfter(number, timeoutInterval: TimeInterval(Double(number) / 100 + 0.1))}
             .awaitFirst()
         
@@ -201,7 +200,7 @@ class TaskigCollectionsTests: XCTestCase {
     func testThatAwaitFirstWorksWithOnDictionary() {
         func testThatAwaitFirstWorks() {
             let result = numbers
-                .shuffle()
+                .shuffled()
                 .reduce(into: [Int: Task<String>](), { (dictionary, number) in
                     dictionary[number] = toStringAfter(number, timeoutInterval: TimeInterval(Double(number) / 100 + 0.1))
                 })
@@ -215,7 +214,7 @@ class TaskigCollectionsTests: XCTestCase {
         func testThatAwaitFirstWorks() {
             do {
                 let result = try numbers
-                    .shuffle()
+                    .shuffled()
                     .reduce(into: [Int: ThrowableTask<String>](), { (dictionary, number) in
                         dictionary[number] = toStringAfter(number, timeoutInterval: TimeInterval(Double(number) / 100 + 0.1)).throwableTask
                     })
