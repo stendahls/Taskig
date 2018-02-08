@@ -34,16 +34,14 @@ extension URL: ThrowableTaskType {
     public var executionQueue: DispatchQueue { return DispatchQueue.global() }
     
     public func action(completion: @escaping (TaskResult<(Data, HTTPURLResponse)>) -> Void) {
-        let session = URLSession(configuration: .ephemeral)
-        let task = session.dataTask(with: self) { (data, response, error) in
+        URLSession.shared.dataTask(with: self) { (data, response, error) in
             guard error == nil else {
                 completion(.failure(error!))
                 return
             }
             
             completion(.success((data!, response as! HTTPURLResponse)))
-        }
-        task.resume()
+        }.resume()
     }
 }
 
@@ -57,13 +55,39 @@ extension UIView {
     }
 }
 
+extension MutableCollection where Index == Int {
+    /// Shuffle the elements of `self` in-place.
+    mutating func shuffle() {
+        // empty and single-element collections don't shuffle
+        if count < 2 { return }
+        
+        for i in startIndex ..< endIndex - 1 {
+            let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
+            if i != j {
+                self.swapAt(i, j)
+            }
+        }
+    }
+}
+
+extension Collection {
+    /// Return a copy of `self` with its elements shuffled
+    func shuffled() -> [Iterator.Element] {
+        var list = Array(self)
+        list.shuffle()
+        return list
+    }
+}
+
 func currentQueueName() -> String? {
     let name = __dispatch_queue_get_label(nil)
     return String(cString: name, encoding: .utf8)
 }
 
-class ViewController: UIViewController {
 
+class ViewController: UIViewController {
+    let privateQueue = DispatchQueue(label: "OwnQueue")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -81,15 +105,45 @@ class ViewController: UIViewController {
             return message
         }
     }
+    
+    func toStringExceptZero(number: Int) -> ThrowableTask<String> {
+        return ThrowableTask {
+            guard number != 0 else {
+                throw "FoundZero"
+            }
+            
+            return "\(number)"
+        }
+    }
 
     func test() {
-        let mainTask = Task<Void>(executionQueue: .main) {
+        let mainTask = Task<Void>(executionQueue: privateQueue) {
             // crash if on main thread
             print("On Main Thread")
         }
         
         Task.async(executionQueue: .background) {
             mainTask.await()
+        }
+        
+        
+        let numbersStrings = (0...900).map{ String($0) }
+        numbersStrings
+            .shuffled()
+            .map(encrypt)
+            .awaitAll(concurrency: 5)
+            .forEach { print($0)}
+        
+        var taskFooBar = ThrowableTask<String> { () -> String in
+            return "Foobar"
+        }
+        
+        taskFooBar.isCancelled = true
+        
+        do {
+            try taskFooBar.await()
+        } catch {
+            print(error)
         }
         
         let task = ThrowableTask<String>(action: { (resultHanlder) -> Void in
@@ -144,7 +198,6 @@ class ViewController: UIViewController {
             return Task<Void>(executionQueue: .main, action: {
                 print(text)
             })
-            
         }
         
         Task.async {
@@ -157,6 +210,10 @@ class ViewController: UIViewController {
             } catch {
                 print(error)
             }
+        }
+        
+        if case let .failure(error) = toStringExceptZero(number: 0).awaitResult() {
+            print(error)
         }
         
         do {
