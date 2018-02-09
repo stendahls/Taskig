@@ -3,4 +3,4 @@ language: objective-c
 xcode_project: Taskig.xcodeproj
 xcode_scheme: TaskigOSX
 
-script: xcodebuild clean && xcodebuild build test -project Taskig.xcodeproj -scheme TaskigOSX
+script: xcodebuild clean build test -project Taskig.xcodeproj -scheme TaskigOSX
