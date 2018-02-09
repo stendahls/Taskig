@@ -1,6 +1,15 @@
-osx_image: xcode8.3
+osx_image: xcode9.2
 language: objective-c
 xcode_project: Taskig.xcodeproj
 xcode_scheme: TaskigOSX
 
-# script: xcodebuild clean build test -project Taskig.xcodeproj -scheme TaskigOSX
+branches:
+  only:
+    - master
+
+before_install:
+  - gem install cocoapods
+
+script: 
+  - xcodebuild clean build test -project Taskig.xcodeproj -scheme TaskigOSX
+  - pod lib lint Taskig.podspec
