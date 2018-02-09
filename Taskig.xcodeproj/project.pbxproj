@@ -1,0 +1,1233 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85057E451FDA8E5400DFCA22 /* TaskigThrowableTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85057E441FDA8E5400DFCA22 /* TaskigThrowableTaskTests.swift */; };
+		8518C64D1FD92CFE00ACC87D /* TaskigHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518C64C1FD92CFE00ACC87D /* TaskigHelpersTests.swift */; };
+		857EF9541FDADB8600A47E3B /* TaskigCollectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857EF9531FDADB8600A47E3B /* TaskigCollectionsTests.swift */; };
+		857EF95F1FDE76FF00A47E3B /* TaskigiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 857EF95D1FDE76FF00A47E3B /* TaskigiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		857EF9621FDE76FF00A47E3B /* Taskig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857EF95B1FDE76FF00A47E3B /* Taskig.framework */; };
+		857EF9631FDE76FF00A47E3B /* Taskig.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 857EF95B1FDE76FF00A47E3B /* Taskig.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		857EF9691FDE77A200A47E3B /* ThrowableTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ED78E21FDA841900CF777B /* ThrowableTaskType.swift */; };
+		857EF96A1FDE77A200A47E3B /* ThrowableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ED78E41FDA854000CF777B /* ThrowableTask.swift */; };
+		857EF96B1FDE77A200A47E3B /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509251FD1501E005929FC /* TaskType.swift */; };
+		857EF96C1FDE77A200A47E3B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509271FD15027005929FC /* Task.swift */; };
+		857EF96D1FDE77A200A47E3B /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509291FD15765005929FC /* Helpers.swift */; };
+		857EF96E1FDE77A200A47E3B /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857EF9511FDACCD400A47E3B /* Collections.swift */; };
+		857EF9701FDE7F6F00A47E3B /* Taskig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857EF95B1FDE76FF00A47E3B /* Taskig.framework */; };
+		857EF97A1FDE841300A47E3B /* TaskigWatchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 857EF9781FDE841300A47E3B /* TaskigWatchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		857EF9871FDE846500A47E3B /* TaskigTVOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 857EF9851FDE846500A47E3B /* TaskigTVOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		857EF9981FDE84A900A47E3B /* ThrowableTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ED78E21FDA841900CF777B /* ThrowableTaskType.swift */; };
+		857EF9991FDE84A900A47E3B /* ThrowableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ED78E41FDA854000CF777B /* ThrowableTask.swift */; };
+		857EF99A1FDE84A900A47E3B /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509251FD1501E005929FC /* TaskType.swift */; };
+		857EF99B1FDE84A900A47E3B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509271FD15027005929FC /* Task.swift */; };
+		857EF99C1FDE84A900A47E3B /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509291FD15765005929FC /* Helpers.swift */; };
+		857EF99D1FDE84A900A47E3B /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857EF9511FDACCD400A47E3B /* Collections.swift */; };
+		857EF99E1FDE84AA00A47E3B /* ThrowableTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ED78E21FDA841900CF777B /* ThrowableTaskType.swift */; };
+		857EF99F1FDE84AA00A47E3B /* ThrowableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ED78E41FDA854000CF777B /* ThrowableTask.swift */; };
+		857EF9A01FDE84AA00A47E3B /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509251FD1501E005929FC /* TaskType.swift */; };
+		857EF9A11FDE84AA00A47E3B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509271FD15027005929FC /* Task.swift */; };
+		857EF9A21FDE84AA00A47E3B /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509291FD15765005929FC /* Helpers.swift */; };
+		857EF9A31FDE84AA00A47E3B /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857EF9511FDACCD400A47E3B /* Collections.swift */; };
+		857EF9BB1FDE859100A47E3B /* ThrowableTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ED78E21FDA841900CF777B /* ThrowableTaskType.swift */; };
+		857EF9BC1FDE859100A47E3B /* ThrowableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ED78E41FDA854000CF777B /* ThrowableTask.swift */; };
+		857EF9BD1FDE859100A47E3B /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509251FD1501E005929FC /* TaskType.swift */; };
+		857EF9BE1FDE859100A47E3B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509271FD15027005929FC /* Task.swift */; };
+		857EF9BF1FDE859100A47E3B /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509291FD15765005929FC /* Helpers.swift */; };
+		857EF9C01FDE859100A47E3B /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857EF9511FDACCD400A47E3B /* Collections.swift */; };
+		857EF9C41FDE886900A47E3B /* TaskigOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 857EF9C21FDE886900A47E3B /* TaskigOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		857EF9CF1FDE89FE00A47E3B /* Taskig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857EF9AF1FDE855100A47E3B /* Taskig.framework */; };
+		857EF9D51FDE8A1300A47E3B /* TaskigThrowableTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85057E441FDA8E5400DFCA22 /* TaskigThrowableTaskTests.swift */; };
+		857EF9D61FDE8A1300A47E3B /* TaskigTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ED78DE1FD9357900CF777B /* TaskigTaskTests.swift */; };
+		857EF9D71FDE8A1300A47E3B /* TaskigHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518C64C1FD92CFE00ACC87D /* TaskigHelpersTests.swift */; };
+		857EF9D81FDE8A1300A47E3B /* TaskigCollectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857EF9531FDADB8600A47E3B /* TaskigCollectionsTests.swift */; };
+		858509061FD15006005929FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509051FD15006005929FC /* AppDelegate.swift */; };
+		858509081FD15006005929FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858509071FD15006005929FC /* ViewController.swift */; };
+		8585090B1FD15006005929FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 858509091FD15006005929FC /* Main.storyboard */; };
+		8585090D1FD15006005929FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8585090C1FD15006005929FC /* Assets.xcassets */; };
+		858509101FD15006005929FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8585090E1FD15006005929FC /* LaunchScreen.storyboard */; };
+		85ED78DF1FD9357900CF777B /* TaskigTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ED78DE1FD9357900CF777B /* TaskigTaskTests.swift */; };
+		85EE5EC4201B57FA00A30A79 /* CancellableTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EE5EC2201B569400A30A79 /* CancellableTaskType.swift */; };
+		85EE5EC5201B57FB00A30A79 /* CancellableTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EE5EC2201B569400A30A79 /* CancellableTaskType.swift */; };
+		85EE5EC6201B57FB00A30A79 /* CancellableTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EE5EC2201B569400A30A79 /* CancellableTaskType.swift */; };
+		85EE5EC7201B57FC00A30A79 /* CancellableTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EE5EC2201B569400A30A79 /* CancellableTaskType.swift */; };
+		85EE5EC9201B5ADF00A30A79 /* TaskigCancellableTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EE5EC8201B5ADF00A30A79 /* TaskigCancellableTaskTests.swift */; };
+		85EE5ECA201B5C1600A30A79 /* TaskigCancellableTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EE5EC8201B5ADF00A30A79 /* TaskigCancellableTaskTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8518C64F1FD92CFE00ACC87D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858508FA1FD15006005929FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 858509011FD15006005929FC;
+			remoteInfo = TaskigDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		857EF9671FDE76FF00A47E3B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				857EF9631FDE76FF00A47E3B /* Taskig.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		85057E441FDA8E5400DFCA22 /* TaskigThrowableTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskigThrowableTaskTests.swift; sourceTree = "<group>"; };
+		85114CBD1FDFDEB200075123 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8518C64A1FD92CFE00ACC87D /* TaskigTestsiOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskigTestsiOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8518C64C1FD92CFE00ACC87D /* TaskigHelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskigHelpersTests.swift; sourceTree = "<group>"; };
+		8518C64E1FD92CFE00ACC87D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		857EF9511FDACCD400A47E3B /* Collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collections.swift; sourceTree = "<group>"; };
+		857EF9531FDADB8600A47E3B /* TaskigCollectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskigCollectionsTests.swift; sourceTree = "<group>"; };
+		857EF95B1FDE76FF00A47E3B /* Taskig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Taskig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		857EF95D1FDE76FF00A47E3B /* TaskigiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskigiOS.h; sourceTree = "<group>"; };
+		857EF95E1FDE76FF00A47E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		857EF9761FDE841300A47E3B /* Taskig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Taskig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		857EF9781FDE841300A47E3B /* TaskigWatchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskigWatchOS.h; sourceTree = "<group>"; };
+		857EF9791FDE841300A47E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		857EF9831FDE846400A47E3B /* Taskig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Taskig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		857EF9851FDE846500A47E3B /* TaskigTVOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskigTVOS.h; sourceTree = "<group>"; };
+		857EF9861FDE846500A47E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		857EF9AF1FDE855100A47E3B /* Taskig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Taskig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		857EF9C21FDE886900A47E3B /* TaskigOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskigOSX.h; sourceTree = "<group>"; };
+		857EF9C31FDE886900A47E3B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		857EF9CA1FDE89FE00A47E3B /* TaskigTestsOSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskigTestsOSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		857EF9CE1FDE89FE00A47E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		858509021FD15006005929FC /* TaskigDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskigDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		858509051FD15006005929FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		858509071FD15006005929FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8585090A1FD15006005929FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8585090C1FD15006005929FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8585090F1FD15006005929FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		858509111FD15006005929FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		858509251FD1501E005929FC /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
+		858509271FD15027005929FC /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		858509291FD15765005929FC /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		85ED78DE1FD9357900CF777B /* TaskigTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskigTaskTests.swift; sourceTree = "<group>"; };
+		85ED78E21FDA841900CF777B /* ThrowableTaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowableTaskType.swift; sourceTree = "<group>"; };
+		85ED78E41FDA854000CF777B /* ThrowableTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowableTask.swift; sourceTree = "<group>"; };
+		85EE5EC2201B569400A30A79 /* CancellableTaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellableTaskType.swift; sourceTree = "<group>"; };
+		85EE5EC8201B5ADF00A30A79 /* TaskigCancellableTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskigCancellableTaskTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8518C6471FD92CFE00ACC87D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				857EF9701FDE7F6F00A47E3B /* Taskig.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9571FDE76FF00A47E3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9721FDE841300A47E3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF97F1FDE846400A47E3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9AB1FDE855100A47E3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9C71FDE89FE00A47E3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				857EF9CF1FDE89FE00A47E3B /* Taskig.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		858508FF1FD15006005929FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				857EF9621FDE76FF00A47E3B /* Taskig.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		851093661FDFC47E002D5989 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				85ED78E21FDA841900CF777B /* ThrowableTaskType.swift */,
+				85ED78E41FDA854000CF777B /* ThrowableTask.swift */,
+				85EE5EC2201B569400A30A79 /* CancellableTaskType.swift */,
+				858509251FD1501E005929FC /* TaskType.swift */,
+				858509271FD15027005929FC /* Task.swift */,
+				858509291FD15765005929FC /* Helpers.swift */,
+				857EF9511FDACCD400A47E3B /* Collections.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		8518C64B1FD92CFE00ACC87D /* TaskigTestsiOS */ = {
+			isa = PBXGroup;
+			children = (
+				8518C64E1FD92CFE00ACC87D /* Info.plist */,
+			);
+			path = TaskigTestsiOS;
+			sourceTree = "<group>";
+		};
+		857EF95C1FDE76FF00A47E3B /* TaskigiOS */ = {
+			isa = PBXGroup;
+			children = (
+				857EF95D1FDE76FF00A47E3B /* TaskigiOS.h */,
+				857EF95E1FDE76FF00A47E3B /* Info.plist */,
+			);
+			path = TaskigiOS;
+			sourceTree = "<group>";
+		};
+		857EF9681FDE777D00A47E3B /* TaskigSource */ = {
+			isa = PBXGroup;
+			children = (
+				851093661FDFC47E002D5989 /* Base */,
+				857EF95C1FDE76FF00A47E3B /* TaskigiOS */,
+				857EF9771FDE841300A47E3B /* TaskigWatchOS */,
+				857EF9841FDE846500A47E3B /* TaskigTVOS */,
+				857EF9C11FDE886900A47E3B /* TaskigOSX */,
+			);
+			path = TaskigSource;
+			sourceTree = "<group>";
+		};
+		857EF96F1FDE7F6F00A47E3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		857EF9771FDE841300A47E3B /* TaskigWatchOS */ = {
+			isa = PBXGroup;
+			children = (
+				857EF9781FDE841300A47E3B /* TaskigWatchOS.h */,
+				857EF9791FDE841300A47E3B /* Info.plist */,
+			);
+			path = TaskigWatchOS;
+			sourceTree = "<group>";
+		};
+		857EF9841FDE846500A47E3B /* TaskigTVOS */ = {
+			isa = PBXGroup;
+			children = (
+				857EF9851FDE846500A47E3B /* TaskigTVOS.h */,
+				857EF9861FDE846500A47E3B /* Info.plist */,
+			);
+			path = TaskigTVOS;
+			sourceTree = "<group>";
+		};
+		857EF9C11FDE886900A47E3B /* TaskigOSX */ = {
+			isa = PBXGroup;
+			children = (
+				857EF9C21FDE886900A47E3B /* TaskigOSX.h */,
+				857EF9C31FDE886900A47E3B /* Info.plist */,
+			);
+			path = TaskigOSX;
+			sourceTree = "<group>";
+		};
+		857EF9CB1FDE89FE00A47E3B /* TaskigTestsOSX */ = {
+			isa = PBXGroup;
+			children = (
+				857EF9CE1FDE89FE00A47E3B /* Info.plist */,
+			);
+			path = TaskigTestsOSX;
+			sourceTree = "<group>";
+		};
+		857EF9DB1FDE8DF700A47E3B /* TaskigTests */ = {
+			isa = PBXGroup;
+			children = (
+				85057E441FDA8E5400DFCA22 /* TaskigThrowableTaskTests.swift */,
+				85ED78DE1FD9357900CF777B /* TaskigTaskTests.swift */,
+				8518C64C1FD92CFE00ACC87D /* TaskigHelpersTests.swift */,
+				857EF9531FDADB8600A47E3B /* TaskigCollectionsTests.swift */,
+				85EE5EC8201B5ADF00A30A79 /* TaskigCancellableTaskTests.swift */,
+				8518C64B1FD92CFE00ACC87D /* TaskigTestsiOS */,
+				857EF9CB1FDE89FE00A47E3B /* TaskigTestsOSX */,
+			);
+			path = TaskigTests;
+			sourceTree = "<group>";
+		};
+		858508F91FD15006005929FC = {
+			isa = PBXGroup;
+			children = (
+				85114CBD1FDFDEB200075123 /* README.md */,
+				857EF9681FDE777D00A47E3B /* TaskigSource */,
+				858509041FD15006005929FC /* TaskigDemo */,
+				857EF9DB1FDE8DF700A47E3B /* TaskigTests */,
+				858509031FD15006005929FC /* Products */,
+				857EF96F1FDE7F6F00A47E3B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		858509031FD15006005929FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				858509021FD15006005929FC /* TaskigDemo.app */,
+				8518C64A1FD92CFE00ACC87D /* TaskigTestsiOS.xctest */,
+				857EF95B1FDE76FF00A47E3B /* Taskig.framework */,
+				857EF9761FDE841300A47E3B /* Taskig.framework */,
+				857EF9831FDE846400A47E3B /* Taskig.framework */,
+				857EF9AF1FDE855100A47E3B /* Taskig.framework */,
+				857EF9CA1FDE89FE00A47E3B /* TaskigTestsOSX.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		858509041FD15006005929FC /* TaskigDemo */ = {
+			isa = PBXGroup;
+			children = (
+				858509051FD15006005929FC /* AppDelegate.swift */,
+				858509071FD15006005929FC /* ViewController.swift */,
+				858509091FD15006005929FC /* Main.storyboard */,
+				8585090C1FD15006005929FC /* Assets.xcassets */,
+				8585090E1FD15006005929FC /* LaunchScreen.storyboard */,
+				858509111FD15006005929FC /* Info.plist */,
+			);
+			path = TaskigDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		857EF9581FDE76FF00A47E3B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				857EF95F1FDE76FF00A47E3B /* TaskigiOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9731FDE841300A47E3B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				857EF97A1FDE841300A47E3B /* TaskigWatchOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9801FDE846400A47E3B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				857EF9871FDE846500A47E3B /* TaskigTVOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9AC1FDE855100A47E3B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				857EF9C41FDE886900A47E3B /* TaskigOSX.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8518C6491FD92CFE00ACC87D /* TaskigTestsiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8518C6531FD92CFE00ACC87D /* Build configuration list for PBXNativeTarget "TaskigTestsiOS" */;
+			buildPhases = (
+				8518C6461FD92CFE00ACC87D /* Sources */,
+				8518C6471FD92CFE00ACC87D /* Frameworks */,
+				8518C6481FD92CFE00ACC87D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8518C6501FD92CFE00ACC87D /* PBXTargetDependency */,
+			);
+			name = TaskigTestsiOS;
+			productName = TaskigDemoTests;
+			productReference = 8518C64A1FD92CFE00ACC87D /* TaskigTestsiOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		857EF95A1FDE76FF00A47E3B /* TaskigiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 857EF9641FDE76FF00A47E3B /* Build configuration list for PBXNativeTarget "TaskigiOS" */;
+			buildPhases = (
+				857EF9561FDE76FF00A47E3B /* Sources */,
+				857EF9571FDE76FF00A47E3B /* Frameworks */,
+				857EF9581FDE76FF00A47E3B /* Headers */,
+				857EF9591FDE76FF00A47E3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskigiOS;
+			productName = TaskigiOS;
+			productReference = 857EF95B1FDE76FF00A47E3B /* Taskig.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		857EF9751FDE841300A47E3B /* TaskigWatchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 857EF97B1FDE841300A47E3B /* Build configuration list for PBXNativeTarget "TaskigWatchOS" */;
+			buildPhases = (
+				857EF9711FDE841300A47E3B /* Sources */,
+				857EF9721FDE841300A47E3B /* Frameworks */,
+				857EF9731FDE841300A47E3B /* Headers */,
+				857EF9741FDE841300A47E3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskigWatchOS;
+			productName = TaskigWatchOS;
+			productReference = 857EF9761FDE841300A47E3B /* Taskig.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		857EF9821FDE846400A47E3B /* TaskigTVOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 857EF9881FDE846500A47E3B /* Build configuration list for PBXNativeTarget "TaskigTVOS" */;
+			buildPhases = (
+				857EF97E1FDE846400A47E3B /* Sources */,
+				857EF97F1FDE846400A47E3B /* Frameworks */,
+				857EF9801FDE846400A47E3B /* Headers */,
+				857EF9811FDE846400A47E3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskigTVOS;
+			productName = TaskigTVOS;
+			productReference = 857EF9831FDE846400A47E3B /* Taskig.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		857EF9AE1FDE855100A47E3B /* TaskigOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 857EF9B41FDE855100A47E3B /* Build configuration list for PBXNativeTarget "TaskigOSX" */;
+			buildPhases = (
+				857EF9AA1FDE855100A47E3B /* Sources */,
+				857EF9AB1FDE855100A47E3B /* Frameworks */,
+				857EF9AC1FDE855100A47E3B /* Headers */,
+				857EF9AD1FDE855100A47E3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskigOSX;
+			productName = TaskigOSX;
+			productReference = 857EF9AF1FDE855100A47E3B /* Taskig.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		857EF9C91FDE89FE00A47E3B /* TaskigTestsOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 857EF9D21FDE89FE00A47E3B /* Build configuration list for PBXNativeTarget "TaskigTestsOSX" */;
+			buildPhases = (
+				857EF9C61FDE89FE00A47E3B /* Sources */,
+				857EF9C71FDE89FE00A47E3B /* Frameworks */,
+				857EF9C81FDE89FE00A47E3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskigTestsOSX;
+			productName = TaskigTestsOSX;
+			productReference = 857EF9CA1FDE89FE00A47E3B /* TaskigTestsOSX.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		858509011FD15006005929FC /* TaskigDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8585091F1FD15006005929FC /* Build configuration list for PBXNativeTarget "TaskigDemo" */;
+			buildPhases = (
+				858508FE1FD15006005929FC /* Sources */,
+				858508FF1FD15006005929FC /* Frameworks */,
+				858509001FD15006005929FC /* Resources */,
+				857EF9671FDE76FF00A47E3B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskigDemo;
+			productName = TaskigDemo;
+			productReference = 858509021FD15006005929FC /* TaskigDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		858508FA1FD15006005929FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Stendahls AB";
+				TargetAttributes = {
+					8518C6491FD92CFE00ACC87D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+						TestTargetID = 858509011FD15006005929FC;
+					};
+					857EF95A1FDE76FF00A47E3B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+					};
+					857EF9751FDE841300A47E3B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+					};
+					857EF9821FDE846400A47E3B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+					};
+					857EF9AE1FDE855100A47E3B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+					};
+					857EF9C91FDE89FE00A47E3B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+					};
+					858509011FD15006005929FC = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 858508FD1FD15006005929FC /* Build configuration list for PBXProject "Taskig" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 858508F91FD15006005929FC;
+			productRefGroup = 858509031FD15006005929FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				858509011FD15006005929FC /* TaskigDemo */,
+				857EF95A1FDE76FF00A47E3B /* TaskigiOS */,
+				857EF9751FDE841300A47E3B /* TaskigWatchOS */,
+				857EF9821FDE846400A47E3B /* TaskigTVOS */,
+				857EF9AE1FDE855100A47E3B /* TaskigOSX */,
+				857EF9C91FDE89FE00A47E3B /* TaskigTestsOSX */,
+				8518C6491FD92CFE00ACC87D /* TaskigTestsiOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8518C6481FD92CFE00ACC87D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9591FDE76FF00A47E3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9741FDE841300A47E3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9811FDE846400A47E3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9AD1FDE855100A47E3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9C81FDE89FE00A47E3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		858509001FD15006005929FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				858509101FD15006005929FC /* LaunchScreen.storyboard in Resources */,
+				8585090D1FD15006005929FC /* Assets.xcassets in Resources */,
+				8585090B1FD15006005929FC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8518C6461FD92CFE00ACC87D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85EE5ECA201B5C1600A30A79 /* TaskigCancellableTaskTests.swift in Sources */,
+				8518C64D1FD92CFE00ACC87D /* TaskigHelpersTests.swift in Sources */,
+				857EF9541FDADB8600A47E3B /* TaskigCollectionsTests.swift in Sources */,
+				85ED78DF1FD9357900CF777B /* TaskigTaskTests.swift in Sources */,
+				85057E451FDA8E5400DFCA22 /* TaskigThrowableTaskTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9561FDE76FF00A47E3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				857EF96C1FDE77A200A47E3B /* Task.swift in Sources */,
+				857EF9691FDE77A200A47E3B /* ThrowableTaskType.swift in Sources */,
+				857EF96B1FDE77A200A47E3B /* TaskType.swift in Sources */,
+				857EF96E1FDE77A200A47E3B /* Collections.swift in Sources */,
+				857EF96D1FDE77A200A47E3B /* Helpers.swift in Sources */,
+				85EE5EC4201B57FA00A30A79 /* CancellableTaskType.swift in Sources */,
+				857EF96A1FDE77A200A47E3B /* ThrowableTask.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9711FDE841300A47E3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				857EF99B1FDE84A900A47E3B /* Task.swift in Sources */,
+				857EF9981FDE84A900A47E3B /* ThrowableTaskType.swift in Sources */,
+				857EF99A1FDE84A900A47E3B /* TaskType.swift in Sources */,
+				857EF99D1FDE84A900A47E3B /* Collections.swift in Sources */,
+				857EF99C1FDE84A900A47E3B /* Helpers.swift in Sources */,
+				85EE5EC5201B57FB00A30A79 /* CancellableTaskType.swift in Sources */,
+				857EF9991FDE84A900A47E3B /* ThrowableTask.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF97E1FDE846400A47E3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				857EF9A11FDE84AA00A47E3B /* Task.swift in Sources */,
+				857EF99E1FDE84AA00A47E3B /* ThrowableTaskType.swift in Sources */,
+				857EF9A01FDE84AA00A47E3B /* TaskType.swift in Sources */,
+				857EF9A31FDE84AA00A47E3B /* Collections.swift in Sources */,
+				857EF9A21FDE84AA00A47E3B /* Helpers.swift in Sources */,
+				85EE5EC6201B57FB00A30A79 /* CancellableTaskType.swift in Sources */,
+				857EF99F1FDE84AA00A47E3B /* ThrowableTask.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9AA1FDE855100A47E3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				857EF9BE1FDE859100A47E3B /* Task.swift in Sources */,
+				857EF9BB1FDE859100A47E3B /* ThrowableTaskType.swift in Sources */,
+				857EF9BD1FDE859100A47E3B /* TaskType.swift in Sources */,
+				857EF9C01FDE859100A47E3B /* Collections.swift in Sources */,
+				857EF9BF1FDE859100A47E3B /* Helpers.swift in Sources */,
+				85EE5EC7201B57FC00A30A79 /* CancellableTaskType.swift in Sources */,
+				857EF9BC1FDE859100A47E3B /* ThrowableTask.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EF9C61FDE89FE00A47E3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85EE5EC9201B5ADF00A30A79 /* TaskigCancellableTaskTests.swift in Sources */,
+				857EF9D71FDE8A1300A47E3B /* TaskigHelpersTests.swift in Sources */,
+				857EF9D81FDE8A1300A47E3B /* TaskigCollectionsTests.swift in Sources */,
+				857EF9D51FDE8A1300A47E3B /* TaskigThrowableTaskTests.swift in Sources */,
+				857EF9D61FDE8A1300A47E3B /* TaskigTaskTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		858508FE1FD15006005929FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				858509081FD15006005929FC /* ViewController.swift in Sources */,
+				858509061FD15006005929FC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8518C6501FD92CFE00ACC87D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 858509011FD15006005929FC /* TaskigDemo */;
+			targetProxy = 8518C64F1FD92CFE00ACC87D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		858509091FD15006005929FC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8585090A1FD15006005929FC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8585090E1FD15006005929FC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8585090F1FD15006005929FC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8518C6511FD92CFE00ACC87D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XS5U4G3W87;
+				INFOPLIST_FILE = TaskigTests/TaskigTestsiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.TaskigDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaskigDemo.app/TaskigDemo";
+			};
+			name = Debug;
+		};
+		8518C6521FD92CFE00ACC87D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XS5U4G3W87;
+				INFOPLIST_FILE = TaskigTests/TaskigTestsiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.TaskigDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaskigDemo.app/TaskigDemo";
+			};
+			name = Release;
+		};
+		857EF9651FDE76FF00A47E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TaskigSource/TaskigiOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.Taskig;
+				PRODUCT_NAME = Taskig;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		857EF9661FDE76FF00A47E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TaskigSource/TaskigiOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.Taskig;
+				PRODUCT_NAME = Taskig;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		857EF97C1FDE841300A47E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TaskigSource/TaskigWatchOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.Taskig;
+				PRODUCT_NAME = Taskig;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		857EF97D1FDE841300A47E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TaskigSource/TaskigWatchOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.Taskig;
+				PRODUCT_NAME = Taskig;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		857EF9891FDE846500A47E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TaskigSource/TaskigTVOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.Taskig;
+				PRODUCT_NAME = Taskig;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		857EF98A1FDE846500A47E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TaskigSource/TaskigTVOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.Taskig;
+				PRODUCT_NAME = Taskig;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		857EF9B51FDE855100A47E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = TaskigSource/TaskigOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.Taskig;
+				PRODUCT_NAME = Taskig;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		857EF9B61FDE855100A47E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = TaskigSource/TaskigOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.Taskig;
+				PRODUCT_NAME = Taskig;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		857EF9D31FDE89FE00A47E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XS5U4G3W87;
+				INFOPLIST_FILE = TaskigTests/TaskigTestsOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.TaskigTestsOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		857EF9D41FDE89FE00A47E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XS5U4G3W87;
+				INFOPLIST_FILE = TaskigTests/TaskigTestsOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.TaskigTestsOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		8585091D1FD15006005929FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8585091E1FD15006005929FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		858509201FD15006005929FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XS5U4G3W87;
+				INFOPLIST_FILE = TaskigDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.TaskigDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e3a10816-b9de-4ab7-bdd5-cd79028d78cb";
+				PROVISIONING_PROFILE_SPECIFIER = StendahlsInHouse;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		858509211FD15006005929FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XS5U4G3W87;
+				INFOPLIST_FILE = TaskigDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.TaskigDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ce686a89-4c70-4f45-9ca3-44f7cdef4bdb";
+				PROVISIONING_PROFILE_SPECIFIER = StendahlsInHouseDevelopment;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8518C6531FD92CFE00ACC87D /* Build configuration list for PBXNativeTarget "TaskigTestsiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8518C6511FD92CFE00ACC87D /* Debug */,
+				8518C6521FD92CFE00ACC87D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		857EF9641FDE76FF00A47E3B /* Build configuration list for PBXNativeTarget "TaskigiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				857EF9651FDE76FF00A47E3B /* Debug */,
+				857EF9661FDE76FF00A47E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		857EF97B1FDE841300A47E3B /* Build configuration list for PBXNativeTarget "TaskigWatchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				857EF97C1FDE841300A47E3B /* Debug */,
+				857EF97D1FDE841300A47E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		857EF9881FDE846500A47E3B /* Build configuration list for PBXNativeTarget "TaskigTVOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				857EF9891FDE846500A47E3B /* Debug */,
+				857EF98A1FDE846500A47E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		857EF9B41FDE855100A47E3B /* Build configuration list for PBXNativeTarget "TaskigOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				857EF9B51FDE855100A47E3B /* Debug */,
+				857EF9B61FDE855100A47E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		857EF9D21FDE89FE00A47E3B /* Build configuration list for PBXNativeTarget "TaskigTestsOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				857EF9D31FDE89FE00A47E3B /* Debug */,
+				857EF9D41FDE89FE00A47E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		858508FD1FD15006005929FC /* Build configuration list for PBXProject "Taskig" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8585091D1FD15006005929FC /* Debug */,
+				8585091E1FD15006005929FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8585091F1FD15006005929FC /* Build configuration list for PBXNativeTarget "TaskigDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				858509201FD15006005929FC /* Debug */,
+				858509211FD15006005929FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 858508FA1FD15006005929FC /* Project object */;
+}
