@@ -1,7 +1,7 @@
 osx_image: xcode9.2
 language: objective-c
-xcode_project: Taskig.xcodeproj
-xcode_scheme: TaskigOSX
+# xcode_project: Taskig.xcodeproj
+# xcode_scheme: TaskigOSX
 
 branches:
   only:
