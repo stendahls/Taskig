@@ -11,5 +11,5 @@ before_install:
   - gem install cocoapods
 
 script: 
-  - xcodebuild clean build test -project Taskig.xcodeproj -scheme TaskigOSX
+  - xcodebuild clean build test -project Taskig.xcodeproj -scheme TaskigOSX CODE_SIGNING_REQUIRED=NO
   - pod lib lint Taskig.podspec
