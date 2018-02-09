@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Taskig'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'An asynchronous programming library for Swift.'
   s.description      = <<-DESC
 An asynchronous programming library for Swift that is composable and protocol oriented.
@@ -9,11 +9,11 @@ An asynchronous programming library for Swift that is composable and protocol or
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Thomas Sempf' => 'thomas.sempf@stendahls.se' }
   s.source           = { :git => 'https://github.com/stendahls/Taskig.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/tsempf'
+  s.social_media_url = 'https://twitter.com/tsempf'
 
-  s.ios.deployment_target = '9.0'
-  s.osx.deployment_target = "10.10"
-  s.tvos.deployment_target = "9.0"
+  s.ios.deployment_target = '10.0'
+  s.osx.deployment_target = "10.12"
+  s.tvos.deployment_target = "10.0"
   s.watchos.deployment_target = '3.0'
 
   s.source_files = 'TaskigSource/Base/*.swift'
