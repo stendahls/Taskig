@@ -1,4 +1,4 @@
-![Taskig: Evil Genius Task Management for Swift](https://raw.githubusercontent.com/stendahls/Taskig/master/TaskigIcon.png)
+![Taskig: Evil Genius Task Management for Swift](../master/TaskigIcon.png)
 
 # Taskig
 
