@@ -1,3 +1,5 @@
+![Taskig: Evil Genius Task Management for Swift](https://raw.githubusercontent.com/stendahls/Taskig/master/TaskigIcon.png)
+
 # Taskig
 
 [![CI Status](http://img.shields.io/travis/stendahls/Taskig.svg?style=flat)](https://travis-ci.org/stendahls/Taskig)
