@@ -1,7 +1,5 @@
 ![Taskig: Evil Genius Task Management for Swift](../master/TaskigIcon.png)
-
-# Taskig
-
+---
 [![CI Status](http://img.shields.io/travis/stendahls/Taskig.svg?style=flat)](https://travis-ci.org/stendahls/Taskig)
 [![Version](https://img.shields.io/cocoapods/v/Taskig.svg?style=flat)](http://cocoapods.org/stendahls/Taskig)
 [![License](https://img.shields.io/cocoapods/l/Taskig.svg?style=flat)](http://cocoapods.org/stendahls/Taskig)
