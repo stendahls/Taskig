@@ -173,7 +173,7 @@ public extension Array {
         }
         
         let _ = finishedAllTasksSemaphore.wait()
-        return results.flatMap {$0}
+        return results.compactMap {$0}
     }
 }
 

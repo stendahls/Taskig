@@ -83,7 +83,7 @@ class TaskigCancellableTaskTests: XCTestCase {
         tasks[7].isCancelled = true
         
         let successCount = tasks.awaitAllResults()
-            .flatMap({ try? $0.unpack() })
+            .compactMap({ try? $0.unpack() })
             .count
         
         XCTAssertTrue(successCount == 9)
@@ -107,7 +107,7 @@ class TaskigCancellableTaskTests: XCTestCase {
         taskDictionary[7]?.isCancelled = true
         
         let successCount = taskDictionary.awaitAllResults()
-            .flatMap({ try? $0.value.unpack() })
+            .compactMap({ try? $0.value.unpack() })
             .count
         
         XCTAssertTrue(successCount == 9)
