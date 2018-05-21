@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Taskig'
-  s.version          = '0.2.1'
+  s.version          = '0.2.2'
   s.summary          = 'An asynchronous programming library for Swift.'
   s.description      = <<-DESC
 An asynchronous programming library for Swift that is composable and protocol oriented.
