@@ -11,9 +11,9 @@ An asynchronous programming library for Swift that is composable and protocol or
   s.source           = { :git => 'https://github.com/stendahls/Taskig.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/tsempf'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.0'
   s.osx.deployment_target = "10.12"
-  s.tvos.deployment_target = "10.0"
+  s.tvos.deployment_target = "9.0"
   s.watchos.deployment_target = '3.0'
 
   s.source_files = 'TaskigSource/Base/*.swift'
