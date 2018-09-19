@@ -25,7 +25,7 @@
 //
 
 import XCTest
-import Taskig
+@testable import Taskig
 
 fileprivate enum TestError: Error {
     case general

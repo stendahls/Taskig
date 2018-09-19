@@ -494,11 +494,12 @@
 				TargetAttributes = {
 					8518C6491FD92CFE00ACC87D = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
-						TestTargetID = 858509011FD15006005929FC;
 					};
 					857EF95A1FDE76FF00A47E3B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
 					};
 					857EF9751FDE841300A47E3B = {
@@ -519,6 +520,7 @@
 					};
 					858509011FD15006005929FC = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -725,7 +727,6 @@
 		8518C6511FD92CFE00ACC87D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = XS5U4G3W87;
 				INFOPLIST_FILE = TaskigTests/TaskigTestsiOS/Info.plist;
@@ -734,16 +735,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.TaskigDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaskigDemo.app/TaskigDemo";
 			};
 			name = Debug;
 		};
 		8518C6521FD92CFE00ACC87D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = XS5U4G3W87;
 				INFOPLIST_FILE = TaskigTests/TaskigTestsiOS/Info.plist;
@@ -752,9 +751,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = se.stendahls.TaskigDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaskigDemo.app/TaskigDemo";
 			};
 			name = Release;
 		};
@@ -776,7 +774,7 @@
 				PRODUCT_NAME = Taskig;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -801,7 +799,7 @@
 				PRODUCT_NAME = Taskig;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1135,7 +1133,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1154,7 +1152,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

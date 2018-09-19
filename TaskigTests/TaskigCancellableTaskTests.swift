@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Taskig
+@testable import Taskig
 
 class TaskigCancellableTaskTests: XCTestCase {
     
