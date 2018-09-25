@@ -16,6 +16,8 @@ An asynchronous programming library for Swift that is composable and protocol or
   s.tvos.deployment_target = "9.0"
   s.watchos.deployment_target = '3.0'
 
+  s.swift_version = '4.2'
+
   s.source_files = 'TaskigSource/Base/*.swift'
   s.requires_arc = true
 end
