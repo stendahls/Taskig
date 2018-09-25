@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/Taskig.svg?style=flat)](http://cocoapods.org/stendahls/Taskig)
 [![License](https://img.shields.io/cocoapods/l/Taskig.svg?style=flat)](http://cocoapods.org/stendahls/Taskig)
 [![Platform](https://img.shields.io/cocoapods/p/Taskig.svg?style=flat)](http://cocoapods.org/stendahls/Taskig)
-![Swift](https://img.shields.io/badge/%20in-swift%204.0-orange.svg)
+![Swift](https://img.shields.io/badge/%20in-swift%204.2-orange.svg)
 
 An async/await inspired library which makes asynchronous programming in Swift a joy!
 
