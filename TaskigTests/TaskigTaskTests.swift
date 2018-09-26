@@ -77,26 +77,6 @@ class TaskigTaskTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
     }
     
-//    func testThatTaskAsyncCallsCompletionHandlerWithFailureResult() {
-//        let expectation = XCTestExpectation()
-//
-//        let task = Task<String> { () -> String in
-//            throw TestError.general
-//        }
-//
-//        task.async { (result) in
-//            if case .failure(let error) = result {
-//                XCTAssert((error as? TestError) == .general)
-//            } else {
-//                XCTAssertTrue(false)
-//            }
-//
-//            expectation.fulfill()
-//        }
-//
-//        wait(for: [expectation], timeout: 1.0)
-//    }
-    
     func testThatTaskCanRunOnMainQueue() {
         let mainThreadExpectation = XCTestExpectation(description: "Running on main thread")
         
@@ -114,7 +94,7 @@ class TaskigTaskTests: XCTestCase {
     }
     
     func testThatTaskCanRunOnNoneMainQueue() {
-        let noneMainThreadExpectation = XCTestExpectation(description: "Running on main thread")
+        let noneMainThreadExpectation = XCTestExpectation(description: "Running on background thread")
         
         let task = Task<String>(executionQueue: .background) { () -> String in
             XCTAssert(Thread.isMainThread == false)
