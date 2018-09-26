@@ -11,5 +11,5 @@ before_install:
   - gem install cocoapods --pre
 
 script: 
-  - xcodebuild clean build test -project Taskig.xcodeproj -scheme TaskigiOS -destination "platform=iOS Simulator,name=iPhone 7,OS=10.0" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+  - xcodebuild clean build test -project Taskig.xcodeproj -scheme TaskigiOS -destination "platform=iOS Simulator,name=iPhone 7,OS=10.1" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
   - pod lib lint Taskig.podspec
