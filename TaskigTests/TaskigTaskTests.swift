@@ -96,7 +96,7 @@ class TaskigTaskTests: XCTestCase {
     func testThatTaskCanRunOnNoneMainQueue() {
         let noneMainThreadExpectation = XCTestExpectation(description: "Running on background thread")
         
-        let task = Task<String>(executionQueue: .background) { () -> String in
+        let task = Task<String>(executionQueue: .userInteractive) { () -> String in
             XCTAssert(Thread.isMainThread == false)
             noneMainThreadExpectation.fulfill()
             return "Done"
