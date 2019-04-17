@@ -40,7 +40,7 @@ public protocol TaskType {
 
 public extension TaskType {
     @discardableResult
-    public func await() -> ResultType {
+    func await() -> ResultType {
         precondition((executionQueue == .main && Thread.isMainThread == true) == false)
         
         var result: ResultType!
@@ -60,7 +60,7 @@ public extension TaskType {
         return result
     }
     
-    public func async(completion: @escaping resultHandler) {
+    func async(completion: @escaping resultHandler) {
         executionQueue.async {
             self.action(completion: completion)
         }

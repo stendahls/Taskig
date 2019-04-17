@@ -124,12 +124,14 @@ class TaskigTaskTests: XCTestCase {
     }
     
     func testThatTaskCanWrapAsynchronousCall() {
-        let get = { (url: URL) -> Task<(Data?, URLResponse?, Error?)> in
-            return Task<(Data?, URLResponse?, Error?)> { (completion) in
+        let get = { (url: URL) -> Task<(Data?, URLResponse?, Error?)> in            
+            return Task<(Data?, URLResponse?, Error?)>(action: { (completion: @escaping ((Data?, URLResponse?, Error?)) -> Void) in
                 URLSession(configuration: .ephemeral)
-                    .dataTask(with: url, completionHandler: completion)
+                    .dataTask(with: url, completionHandler: { (data, response, error) in
+                        completion((data, response, error))
+                    })
                     .resume()
-            }
+            })
         }
         
         let url = URL(string: "https://httpbin.org/delay/1")!

@@ -51,13 +51,13 @@ public struct Task<T>: TaskType {
 }
 
 public extension Task where T == Void {
-    public static func async(executionQueue: DispatchQueue = .global(), action: @escaping () -> Void) {
+    static func async(executionQueue: DispatchQueue = .global(), action: @escaping () -> Void) {
         executionQueue.async {
             action()
         }
     }
     
-    public func async() {
+    func async() {
         executionQueue.async {
             self.action(completion: { (_) in })
         }

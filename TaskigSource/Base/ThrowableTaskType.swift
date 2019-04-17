@@ -42,7 +42,7 @@ public protocol ThrowableTaskType {
 
 public extension ThrowableTaskType {
     @discardableResult
-    public func awaitResult() -> TaskResult<ResultType> {
+    func awaitResult() -> TaskResult<ResultType> {
         precondition((executionQueue == .main && Thread.isMainThread == true) == false)
         
         var result: TaskResult<ResultType>!
@@ -63,18 +63,18 @@ public extension ThrowableTaskType {
     }
     
     @discardableResult
-    public func await() throws -> ResultType {
+    func await() throws -> ResultType {
         return try awaitResult().unpack()
     }
     
-    public func async(completion: @escaping resultHandler) {
+    func async(completion: @escaping resultHandler) {
         executionQueue.async {
             self.action(completion: completion)
         }
     }
     
     @discardableResult
-    public static func await(executionQueue: DispatchQueue = .global(), action: @escaping () throws -> ResultType) throws -> ResultType {
+    static func await(executionQueue: DispatchQueue = .global(), action: @escaping () throws -> ResultType) throws -> ResultType {
         let task = ThrowableTask<ResultType> { () -> Self.ResultType in
            return try action()
         }

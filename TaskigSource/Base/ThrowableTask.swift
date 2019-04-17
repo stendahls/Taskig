@@ -58,7 +58,7 @@ public struct ThrowableTask<T>: ThrowableTaskType {
 }
 
 public extension ThrowableTask where T == Void {
-    public func async() {
+    func async() {
         executionQueue.async {
             self.action(completion: { (_) in })
         }
