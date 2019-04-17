@@ -329,6 +329,27 @@ class TaskigThrowableTaskTests: XCTestCase {
         waitForExpectations(timeout: 0.5, handler: nil)
     }
     
+    func testThatThrowableTaskAsyncAfterTimeIntervallWorks() {
+        let finishExpectation = expectation(description: "Finish")
+        let startDate = Date()
+        var stopDate: Date?
+        
+        let voidTask = ThrowableTask<Void> {
+            stopDate = Date()
+            finishExpectation.fulfill()
+        }
+        
+        voidTask.async(delayBy: 1)
+        
+        waitForExpectations(timeout: 2) { (_) in
+            guard let stopDate = stopDate else {
+                XCTAssert(false, "Missing stop date")
+                return
+            }
+            XCTAssert(stopDate.timeIntervalSince(startDate) > 1)
+        }
+    }
+    
     func testThatThrowableTaskAwaitRunsSerially() {
         let numbers: [Int] = [0,1,2,3,4,5]
         

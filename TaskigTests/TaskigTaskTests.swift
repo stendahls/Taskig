@@ -124,7 +124,7 @@ class TaskigTaskTests: XCTestCase {
     }
     
     func testThatTaskCanWrapAsynchronousCall() {
-        let get = { (url: URL) -> Task<(Data?, URLResponse?, Error?)> in            
+        let get = { (url: URL) -> Task<(Data?, URLResponse?, Error?)> in
             return Task<(Data?, URLResponse?, Error?)>(action: { (completion: @escaping ((Data?, URLResponse?, Error?)) -> Void) in
                 URLSession(configuration: .ephemeral)
                     .dataTask(with: url, completionHandler: { (data, response, error) in
@@ -328,6 +328,27 @@ class TaskigTaskTests: XCTestCase {
         
         waitForExpectations(timeout: 0.5) { (_) in
             XCTAssert(a == 1)
+        }
+    }
+    
+    func testThatAsyncAfterTimeIntervallWorks() {
+        let finishExpectation = expectation(description: "Finish")
+        let startDate = Date()
+        var stopDate: Date?
+        
+        let voidTask = Task<Void> {
+            stopDate = Date()
+            finishExpectation.fulfill()
+        }
+        
+        voidTask.async(delayBy: 1)
+        
+        waitForExpectations(timeout: 2) { (_) in
+            guard let stopDate = stopDate else {
+                XCTAssert(false, "Missing stop date")
+                return
+            }
+            XCTAssert(stopDate.timeIntervalSince(startDate) > 1)
         }
     }
     

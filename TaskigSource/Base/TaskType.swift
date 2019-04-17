@@ -35,7 +35,7 @@ public protocol TaskType {
     func action(completion: @escaping resultHandler)
     
     func await() throws -> ResultType
-    func async(completion: @escaping resultHandler)
+    func async(delayBy: TimeInterval, completion: @escaping resultHandler)
 }
 
 public extension TaskType {
@@ -60,8 +60,8 @@ public extension TaskType {
         return result
     }
     
-    func async(completion: @escaping resultHandler) {
-        executionQueue.async {
+    func async(delayBy: TimeInterval = 0, completion: @escaping resultHandler) {
+        executionQueue.asyncAfter(deadline: .now() + delayBy) {
             self.action(completion: completion)
         }
     }

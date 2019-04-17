@@ -58,8 +58,8 @@ public struct ThrowableTask<T>: ThrowableTaskType {
 }
 
 public extension ThrowableTask where T == Void {
-    func async() {
-        executionQueue.async {
+    func async(delayBy: TimeInterval = 0) {
+        executionQueue.asyncAfter(deadline: .now() + delayBy) {
             self.action(completion: { (_) in })
         }
     }
@@ -93,8 +93,8 @@ extension ThrowableTask: CancellableTaskType {
         return result
     }
 
-    public func async(completion: @escaping resultHandler) {
-        executionQueue.async {
+    public func async(delayBy: TimeInterval = 0, completion: @escaping resultHandler) {
+        executionQueue.asyncAfter(deadline: .now() + delayBy) {
             guard self.isCancelled == false else {
                 completion(.failure(CancellableTaskError.taskWasCancelled))
                 return
