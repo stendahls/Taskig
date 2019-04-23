@@ -66,7 +66,7 @@ extension TaskType {
     var throwableTask: ThrowableTask<ResultType> {
         return ThrowableTask<ResultType>(action: { callback in
             self.action { result in
-                callback(TaskResult.success(result))
+                callback(Result.success(result))
             }
         })
     }

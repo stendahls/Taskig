@@ -29,23 +29,23 @@ import Foundation
 public protocol ThrowableTaskType {
     associatedtype ResultType
     
-    typealias resultHandler = (TaskResult<ResultType>) -> Void
+    typealias resultHandler = (Result<ResultType, Error>) -> Void
     
     var executionQueue: DispatchQueue { get }
     
     func action(completion: @escaping resultHandler)
     
     func await() throws -> ResultType
-    func awaitResult() -> TaskResult<ResultType>
+    func awaitResult() -> Result<ResultType, Error>
     func async(delayBy: TimeInterval, completion: @escaping resultHandler)
 }
 
 public extension ThrowableTaskType {
     @discardableResult
-    func awaitResult() -> TaskResult<ResultType> {
+    func awaitResult() -> Result<ResultType, Error> {
         precondition((executionQueue == .main && Thread.isMainThread == true) == false)
         
-        var result: TaskResult<ResultType>!
+        var result: Result<ResultType, Error>!
         
         let group = DispatchGroup()
         group.enter()
@@ -64,7 +64,7 @@ public extension ThrowableTaskType {
     
     @discardableResult
     func await() throws -> ResultType {
-        return try awaitResult().unpack()
+        return try awaitResult().get()
     }
     
     func async(delayBy: TimeInterval = 0, completion: @escaping resultHandler) {

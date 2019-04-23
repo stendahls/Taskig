@@ -247,16 +247,16 @@ class TaskigThrowableTaskTests: XCTestCase {
         
         let chainedTask = ThrowableTask<String> { completion in
             emptyString.async(completion: { (result) in
-                let s = try! result.unpack()
+                let s = try! result.get()
                 XCTAssert(s == "")
                 appendString(s, "https://").async { (result) in
-                    let s = try! result.unpack()
+                    let s = try! result.get()
                     XCTAssert(s == "https://")
                     appendString(s, "swift").async { (result) in
-                        let s = try! result.unpack()
+                        let s = try! result.get()
                         XCTAssert(s == "https://swift")
                         appendString(s, ".org").async { (result) in
-                            let s = try! result.unpack()
+                            let s = try! result.get()
                             XCTAssert(s == "https://swift.org")
                             completion(.success(s))
                         }
@@ -389,7 +389,7 @@ class TaskigThrowableTaskTests: XCTestCase {
         
         numbers.forEach ({
             toStringTask($0).async { taskResult in
-                let convertedNumber = try! taskResult.unpack()
+                let convertedNumber = try! taskResult.get()
                 lockQueue.sync {
                     result = result + convertedNumber
                     
@@ -457,7 +457,7 @@ fileprivate struct CustomThrowableTask: ThrowableTaskType {
     
     var executionQueue: DispatchQueue
     
-    func action(completion: @escaping (TaskResult<String>) -> Void) {
+    func action(completion: @escaping (Result<String, Error>) -> Void) {
         completion(.success("foobar"))
     }
 }

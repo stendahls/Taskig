@@ -34,7 +34,7 @@ class TaskigCancellableTaskTests: XCTestCase {
         
         task.async { (completion) in
             defer { finishExpectation.fulfill() }
-            guard case TaskResult.failure(CancellableTaskError.taskWasCancelled) = completion else {
+            guard case Result.failure(CancellableTaskError.taskWasCancelled) = completion else {
                 XCTAssert(false, "Result was not CancellableTaskError.taskWasCancelled")
                 return
             }
@@ -66,7 +66,7 @@ class TaskigCancellableTaskTests: XCTestCase {
         
         task.isCancelled = true
         
-        guard case TaskResult.failure(CancellableTaskError.taskWasCancelled) = task.awaitResult() else {
+        guard case Result.failure(CancellableTaskError.taskWasCancelled) = task.awaitResult() else {
             XCTAssert(false, "Result was not CancellableTaskError.taskWasCancelled")
             return
         }
@@ -83,7 +83,7 @@ class TaskigCancellableTaskTests: XCTestCase {
         tasks[7].isCancelled = true
         
         let successCount = tasks.awaitAllResults()
-            .compactMap({ try? $0.unpack() })
+            .compactMap({ try? $0.get() })
             .count
         
         XCTAssertTrue(successCount == 9)
@@ -105,9 +105,9 @@ class TaskigCancellableTaskTests: XCTestCase {
             }
         
         taskDictionary[7]?.isCancelled = true
-        
+
         let successCount = taskDictionary.awaitAllResults()
-            .compactMap({ try? $0.value.unpack() })
+            .compactMap({ try? $0.value.get() })
             .count
         
         XCTAssertTrue(successCount == 9)

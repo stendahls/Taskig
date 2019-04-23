@@ -26,20 +26,6 @@
 
 import Foundation
 
-public enum TaskResult<T> {
-    case success(T)
-    case failure(Error)
-    
-    public func unpack() throws -> T {
-        switch self {
-        case .success(let value):
-            return value
-        case .failure(let error):
-            throw error
-        }
-    }
-}
-
 public extension DispatchQueue {
     static var userInteractive: DispatchQueue {
         return .global(qos: .userInteractive)

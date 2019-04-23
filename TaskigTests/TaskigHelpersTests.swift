@@ -49,13 +49,13 @@ class TaskigHelpersTests: XCTestCase {
     
     func testThatTaskResultUnpackReturnsValueOnSuccess() {
         let value = "FooBar"
-        let result = TaskResult<String>.success(value)
-        XCTAssert(try result.unpack() == value)
+        let result = Result<String, Error>.success(value)
+        XCTAssert(try result.get() == value)
     }
     
     func testThatTaskResultUnpackThrowsOnFailure() {
-        let result = TaskResult<String>.failure(TestError.general)
-        XCTAssertThrowsError(try result.unpack())
+        let result = Result<String, Error>.failure(TestError.general)
+        XCTAssertThrowsError(try result.get())
     }
     
     func testThatShortcutUserInteractiveReturnsRightQueue() {

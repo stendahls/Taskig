@@ -33,7 +33,7 @@ extension URL: ThrowableTaskType {
     typealias ReturnType = (Data, HTTPURLResponse)
     public var executionQueue: DispatchQueue { return DispatchQueue.global() }
     
-    public func action(completion: @escaping (TaskResult<(Data, HTTPURLResponse)>) -> Void) {
+    public func action(completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void) {
         URLSession.shared.dataTask(with: self) { (data, response, error) in
             guard error == nil else {
                 completion(.failure(error!))

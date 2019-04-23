@@ -67,10 +67,10 @@ public extension ThrowableTask where T == Void {
 
 extension ThrowableTask: CancellableTaskType {
     @discardableResult
-    public func awaitResult() -> TaskResult<ResultType> {
+    public func awaitResult() -> Result<ResultType, Error> {
         precondition((executionQueue == .main && Thread.isMainThread == true) == false)
         
-        var result: TaskResult<ResultType>!
+        var result: Result<ResultType, Error>!
         
         let group = DispatchGroup()
         group.enter()

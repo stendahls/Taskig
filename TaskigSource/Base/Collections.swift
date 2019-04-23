@@ -46,9 +46,9 @@ public extension Dictionary where Value : ThrowableTaskType {
         return Dictionary<Key, Value.ResultType>(uniqueKeysWithValues: elements)
     }
     
-    func awaitAllResults(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) -> [Key: TaskResult<Value.ResultType>] {
+    func awaitAllResults(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) -> [Key: Result<Value.ResultType, Error>] {
         let elements = Array(zip(Array(keys), values.awaitAllResults(queue, concurrency: concurrency)))
-        return Dictionary<Key, TaskResult<Value.ResultType>>(uniqueKeysWithValues: elements)
+        return Dictionary<Key, Result<Value.ResultType, Error>>(uniqueKeysWithValues: elements)
     }
 }
 
@@ -70,15 +70,15 @@ public extension Dictionary where Value : TaskType {
 // MARK: - Await support for Sequence
 
 public extension Sequence where Iterator.Element: ThrowableTaskType {
-    func awaitFirstResult(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) -> TaskResult<Iterator.Element.ResultType> {
+    func awaitFirstResult(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) -> Result<Iterator.Element.ResultType, Error> {
         let tasks = map{$0}
         
         guard tasks.count > 0 else {
-            return TaskResult.failure(TaskigError.emptySequence)
+            return Result.failure(TaskigError.emptySequence)
         }
         
-        return Task.await(executionQueue: queue) { () -> TaskResult<Self.Element.ResultType> in
-            var result: TaskResult<Self.Element.ResultType>!
+        return Task.await(executionQueue: queue) { () -> Result<Self.Element.ResultType, Error> in
+            var result: Result<Self.Element.ResultType, Error>!
             
             tasks.concurrentForEach(queue,
                                     concurrency: concurrency,
@@ -89,18 +89,18 @@ public extension Sequence where Iterator.Element: ThrowableTaskType {
         }
     }
     
-    func awaitAllResults(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) -> [TaskResult<Iterator.Element.ResultType>] {
+    func awaitAllResults(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) -> [Result<Iterator.Element.ResultType, Error>] {
         let tasks = map{$0}
         
         return tasks.concurrentMap(queue, concurrency: concurrency) {task in task.awaitResult()}
     }
     
     func awaitFirst(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) throws -> Iterator.Element.ResultType {
-        return try awaitFirstResult(queue, concurrency: concurrency).unpack()
+        return try awaitFirstResult(queue, concurrency: concurrency).get()
     }
     
     func awaitAll(_ queue: DispatchQueue = .global(), concurrency: Int = DefaultConcurrency) throws -> [Iterator.Element.ResultType] {
-        return try awaitAllResults(queue, concurrency: concurrency).map{ try $0.unpack() }
+        return try awaitAllResults(queue, concurrency: concurrency).map{ try $0.get() }
     }
 }
 
