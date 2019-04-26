@@ -90,6 +90,7 @@
 		8518C64A1FD92CFE00ACC87D /* TaskigTestsiOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskigTestsiOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8518C64C1FD92CFE00ACC87D /* TaskigHelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskigHelpersTests.swift; sourceTree = "<group>"; };
 		8518C64E1FD92CFE00ACC87D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8523FB3F2273074700361989 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		8542E2FB20B2E17500574EE0 /* Taskig.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Taskig.podspec; sourceTree = "<group>"; };
 		857EF9511FDACCD400A47E3B /* Collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collections.swift; sourceTree = "<group>"; };
 		857EF9531FDADB8600A47E3B /* TaskigCollectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskigCollectionsTests.swift; sourceTree = "<group>"; };
@@ -284,6 +285,7 @@
 			children = (
 				85114CBD1FDFDEB200075123 /* README.md */,
 				8542E2FB20B2E17500574EE0 /* Taskig.podspec */,
+				8523FB3F2273074700361989 /* Package.swift */,
 				857EF9681FDE777D00A47E3B /* TaskigSource */,
 				858509041FD15006005929FC /* TaskigDemo */,
 				857EF9DB1FDE8DF700A47E3B /* TaskigTests */,
